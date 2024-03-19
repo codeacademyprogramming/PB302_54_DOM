@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/1.0.8/reseter.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <button style="float: right;">Hide</button>
+    <section id="sidebar" style="transition: 0.5s;">
+        <div class="logo">
+            <h1>PB302</h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href=""><span>Home</span></a></li>
+                <li><a href=""><span>About us</span></a></li>
+                <li><a href=""><span>FAQ</span></a></li>
+                <li><a href=""><span>Contact</span></a></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script>
+        let btn = document.querySelector("button");
+        let sidebar = document.getElementById("sidebar")
+        let displayStatus=true;
+        // btn.onclick = function(){
+        //     alert("Hello")
+        // }
+
+        function sidebarToggle(){
+            if(displayStatus){
+                sidebar.style.transform="translateX(-250px)"
+                btn.innerText="Show"
+            }
+            else{
+                sidebar.style.transform="translateX(0px)"
+                btn.innerText="Hide"
+            }
+
+            displayStatus=!displayStatus
+        }
+
+        btn.addEventListener("click",()=>sidebarToggle())
+    </script>
+</body>
+</html>
